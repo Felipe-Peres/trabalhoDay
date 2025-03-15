@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html  lang="en" class="w-mod-js light-mode w-mod-ix">
+
+<head>
+    <style>
+        .wf-force-outline-none[tabindex="-1"]:focus {
+            outline: none;
+        }
+    </style>
+    <meta charset="utf-8">
+    <title>Dayanne Tanabe</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/css/giuligartner.webflow.035407beb.min.css"rel="stylesheet" type="text/css">
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!--===== Boxicons CSS =====-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+     
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link href="img/favicontop.png" rel="shortcut icon" type="image/x-icon">
+    <link href="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/636aa2348c6670397d0073bd_favicon-256x256.svg" rel="apple-touch-icon">
+    <meta name="theme-color" content="#0E1012">
+
+
+    <!-- Theme switcher -->
+    <script>
+        if (localStorage.getItem('light-mode') !== null) {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+
+    <!-- [Attributes by Finsweet] Copy to clipboard -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-copyclip@1/copyclip.js"></script>
+
+    <!-- [Attributes by Finsweet] Auto Video -->
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-autovideo@1/autovideo.js"></script>
+
+    <!-- CSS for Lenis & GSAP -->
+    <style>
+        html {
+            scroll-behavior: initial;
+        }
+        .container.footer-container {
+    z-index: -1;
+    position: relative;
+}
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+        }
+.dropbtn {
+  color: white;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: sticky;
+  right:10px ;
+  bottom:10px;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.option{
+    font-size: 13px;
+    padding: 0 10 ;
+    margin: 0px;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+        img {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+        }
+
+        ::selection {
+            background: #8888881f;
+        }
+
+        [text-split] {
+            opacity: 0;
+        }
+
+        html.w-editor [text-split] {
+            opacity: 1;
+        }
+
+        .word {
+            overflow: hidden;
+            padding-bottom: 0.1em;
+            margin-bottom: -0.1em;
+            transform-origin: bottom;
+        }
+    </style>
+    <script src="chrome-extension://njgehaondchbmjmajphnhlojfnbfokng/js/contentScripts/dom.js"></script>
+</head>
+
+<body class="body"  cz-shortcut-listen="true">
+    
+    <div class="css">
+        <div class="css w-embed">
+            <style>
+                /* Hide transition only in Webflow */
+                html.wf-design-mode .page-transition {
+                    pointer-events: none;
+                    display: none;
+                }
+
+                /* Parent's text color */
+                a,
+                a:focus,
+                .w-nav-link,
+                .w-nav-brand,
+                .w-nav-button.w--open {
+                    color: currentcolor;
+                }
+
+                /* These elements are invisible to the cursor */
+                .grain,
+                .video-card-overlay,
+                .polaroid-photo-shadow,
+                .transition,
+                .video-card-gradient,
+                .vimeo-video,
+                .photo-cms-gradient {
+                    pointer-events: none;
+                }
+
+                /* Parent's text and border color */
+                .button,
+                .article-row,
+                .form-field {
+                    border-color: currentcolor;
+                    color: currentColor;
+                }
+
+                /* Parent's border color */
+                .photo-case-anchor-link.w--current,
+                .photo-case-anchor-link:hover {
+                    z-index: 9 !important;
+                    transform: perspective(1200px) translate3d(0px, 0px, 32px) !important;
+                    border-color: currentColor;
+                }
+
+                .photo-case-anchor-link.w--current .photo-case-anchor-overlay {
+                    opacity: 0;
+                }
+
+                .photo-case-anchor-link:hover .photo-case-anchor-overlay {
+                    opacity: 0;
+                }
+
+                /* Color palette hover effects */
+                .photo-cms-meta-palette:hover .photo-cms-palette-color {
+                    opacity: 1;
+                }
+
+                .photo-cms-palette-color:hover .photo-card-palette-hex {
+                    opacity: 1;
+                }
+
+                /* Logo hover effects */
+                .nav-logo:hover .nav-logo-svg.dot._1 {
+                    transform: translateY(-2px);
+                }
+
+                .nav-logo:hover .nav-logo-svg.dot._2 {
+                    transform: translateY(-4px);
+                }
+
+                /* Play button hover effect */
+                .play-lightbox:hover .play-button-mask {
+                    width: 90px;
+                }
+
+                /* Responsive font size for desktop screens */
+                @media screen and (min-width: 992px) {
+                    .headline {
+                        --minFontSize: 150px;
+                        --maxFontSize: 180px;
+                        --scaler: 13vw;
+                        font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+                    }
+
+                    h1 {
+                        --minFontSize: 98px;
+                        --maxFontSize: 108px;
+                        --scaler: 10vw;
+                        font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+                    }
+
+                    h2 {
+                        --minFontSize: 80px;
+                        --maxFontSize: 98px;
+                        --scaler: 8vw;
+                        font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+                    }
+
+                    h3 {
+                        --minFontSize: 64px;
+                        --maxFontSize: 80px;
+                        --scaler: 6vw;
+                        font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+                    }
+
+                    .intro-image {
+                        --minFontSize: 64px;
+                        --maxFontSize: 80px;
+                        --scaler: 6vw;
+                        height: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+                    }
+                }
+
+                /* Button hover effect */
+                .button:after {
+                    width: 100%;
+                    height: 100%;
+                    background: currentColor;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: '';
+                    margin-left: auto;
+                    margin-right: auto;
+                    opacity: 0;
+                    -webkit-transition: .6s cubic-bezier(.215, .61, .355, 1);
+                    transition: .6s cubic-bezier(.215, .61, .355, 1);
+                    pointer-events: none;
+                }
+
+                .button:hover:after {
+                    opacity: 0.12;
+                }
+
+
+
+                .footer-email:hover .footer-email-detail {
+                    margin-left: 8px;
+                    margin-right: 8px;
+                    z-index: -1;
+                }
+
+                .about-divider,
+                .about-logo-background,
+                .video-role-divider {
+                    background: currentcolor;
+                }
+
+                .aperture-color {
+                    fill: currentcolor;
+                }
+
+                .light-background,
+                .marquee-banner-divider {
+                    background: currentcolor;
+                    pointer-events: none;
+                }
+
+                .about-link-row {
+                    border-color: currentcolor;
+                }
+
+                .about-prizes-background {
+                    pointer-events: none;
+                }
+
+                .header-wrapper h1 {
+                    margin-bottom: 0;
+                    color: #F0DECA;
+                }
+
+                .section-title:only-child {
+                    margin-bottom: 0;
+                }
+
+                .photo-card-palette-hex.w-embed {
+                    background: inherit;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    filter: sepia(5) saturate(200) invert(1) grayscale(1) contrast(12);
+                }
+
+                a.-wfp-focus,
+                :where(html:not(.wf-design-mode)) a:focus {
+                    outline-color: currentColor;
+                }
+
+                .about-brand h4 {
+                    margin: 4px 8px;
+                }
+
+                .about-brand h4::after {
+                    content: "✦";
+                    font-size: 0.4em;
+                    margin-left: 1.2em;
+                    top: -0.5em;
+                    position: relative;
+                }
+
+                .about-brand h4:last-child::after {
+                    content: "";
+                    font-size: 0.4em;
+                    margin-left: 0;
+                }
+
+                .about-awards-background {
+                    background: currentcolor;
+                }
+
+                a.about-awards-row:hover .about-awards-h4 {
+                    transform: translateX(16px);
+                }
+
+                a.about-awards-row:hover .about-tags {
+                    transform: translateX(-16px);
+                }
+
+                a.about-awards-row:hover .about-awards-background {
+                    opacity: 0.08;
+                }
+
+                .grain-texture {
+                    animation: 2s steps(1) infinite noise;
+                }
+
+                @keyframes noise {
+
+                    0%,
+                    100% {
+                        background-position: 0 0;
+                    }
+
+                    10% {
+                        background-position: -5% -10%;
+                    }
+
+                    20% {
+                        background-position: -15% 5%;
+                    }
+
+                    30% {
+                        background-position: 7% -25%;
+                    }
+
+                    40% {
+                        background-position: 20% 25%;
+                    }
+
+                    50% {
+                        background-position: -25% 10%;
+                    }
+
+                    60% {
+                        background-position: 15% 5%;
+                    }
+
+                    70% {
+                        background-position: 0% 15%;
+                    }
+
+                    80% {
+                        background-position: 25% 35%;
+                    }
+
+                    90% {
+                        background-position: -10% 10%;
+                    }
+                }
+
+                .instalink:hover {
+                    background-size: 300% 100%;
+                    animation: instalink 4s linear infinite;
+                }
+
+                @keyframes instalink {
+                    0% {
+                        background-position: 0% 0%;
+                    }
+
+                    50% {
+                        background-position: 100% 0%;
+                    }
+
+                    100% {
+                        background-position: 0% 0%;
+                    }
+                }
+
+                .section-title:last-child,
+                .section-title:only-child {
+                    margin-bottom: 0;
+                }
+
+                .footer-email-border {
+                    border-color: currentcolor;
+                }
+
+                a.about-awards-row:hover .about-divider {
+                    opacity: 0;
+                }
+
+                /* SCROLLBAR */
+                ::-webkit-scrollbar {
+                    width: 8px;
+                    border-radius: 8px;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background: currentcolor;
+                    border-radius: 8px;
+                }
+
+                ::-webkit-scrollbar-thumb:hover {
+                    background: currentcolor;
+                }
+
+                ::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                .hide {
+                    display: none;
+                }
+
+                .w-lightbox-backdrop {
+                    backdrop-filter: blur(8px);
+                }
+
+                .w-lightbox-embed {
+                    border-radius: 16px;
+                }
+
+                .w-lightbox-close {
+                    right: 12px;
+                    height: 64px;
+                    width: 64px;
+                    background-size: 20px;
+                    background-color: black;
+                    border-radius: 50%;
+                    backdrop-filter: blur(8px);
+                }
+
+                .motion-cms-image-wrapper.main:hover .motion-cms-play-icon {
+                    transform: scale(1.1);
+                }
+
+                .motion-cms-image-wrapper.main:hover .motion-cms-play-icon.glow {
+                    filter: blur(12px);
+                    opacity: 1;
+                }
+
+                .motion-cms-image {
+                    width: calc(100% + 64px);
+                    height: calc(100% + 64px);
+                }
+
+                .come-and-say-hi:hover .footer-smile.o {
+                    display: none;
+                }
+
+                .come-and-say-hi:hover .footer-smile.happy {
+                    display: flex;
+                }
+
+                a {
+                    -webkit-tap-highlight-color: transparent;
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+
+                * {
+                    -webkit-tap-highlight-color: transparent;
+                    -webkit-touch-callout: none;
+                }
+
+                .w-nav-overlay {
+                    top: 0%;
+                }
+            </style>
+        </div>
+        <div class="theme w-embed">
+            <style>
+                /* SET VARIABLES */
+                :root {
+                    --transition-speed: 500ms;
+                    --dark: #1a4572;
+                    --light: #e8e5f0;
+                }
+
+                /* SET TRANSITION */
+                .transition body {
+                    transition: color var(--transition-speed), background-color var(--transition-speed) !important;
+                    transition-timing-function: ease;
+                }
+
+                /* SET STYLES */
+                .nav-background {
+                    transition: color #F0DECA, background-color var(--transition-speed) !important;
+                    transition-timing-function: ease;
+                }
+
+                .light-mode :is(body) {
+                    background-color: white;
+                    color: #BA8B6F;
+                }
+
+                .light-mode :is(.toggle) {
+                    background-color: var(--dark);
+                    color: var(--light);
+                }
+
+                .light-mode .nav-background {
+                    background-color: var(--light);
+                    opacity: 0.75;
+                    transition: color var(--transition-speed), background-color var(--transition-speed) !important;
+                    transition-timing-function: ease;
+                }
+
+                .light-mode .aperture-text {
+                    transform: translateY(-100%);
+                }
+
+                .light-mode .photo-case-anchor-overlay {
+                    background-color: var(--light);
+                }
+
+                .light-mode :is(.bg, .page-transition) {
+                    background-color: white;
+                }
+
+                .light-mode .video-card-gradient {
+                    background-image: linear-gradient(to right, #e8e5f0, #e8e5f0 20%, #e8e5f0 80%, #e8e5f0) !important;
+                }
+
+                .light-mode .about-divider {
+                    opacity: .16;
+                }
+
+                .light-mode .headline.about {
+                    mix-blend-mode: multiply;
+                }
+
+                .light-mode .photo-case-header-h1 {
+                    mix-blend-mode: multiply;
+                }
+
+                .light-mode .motion-cms-play {
+                    background-color: rgba(232, 229, 240, 0.40);
+                }
+
+                .light-mode .about-logo-wrapper:after {
+                    background: radial-gradient(600px circle at var(--x-px) var(--y-px), rgba(26, 69, 114, 0.12), transparent 40%);
+                }
+
+                .light-mode .about-giulia-photo.warm {
+                    opacity: 1;
+                }
+
+                @media only screen and (max-width: 991px) {
+                    .light-mode .nav-menu-grid {
+                        background-color: white;
+                    }
+                }
+            </style>
+        </div>
+    </div>
+    <div class="grain">
+        <div class="grain-texture"></div>
+    </div>
+    <div class="page-transition wf-section" style="display: none; opacity: 0;"></div>
+    <div
+    data-collapse="medium"
+    data-animation="default"
+    data-duration="700"
+    data-easing="ease-out-quart"
+    data-easing2="ease-in-quart"
+    role="banner"
+    class="nav w-nav">
+    <div class="container nav-container">
+        <a href="index.html"aria-current="page" class="nav-logo w-nav-brand w--current">Dayanne</a>
+    <nav role="navigation" class="nav-menu w-nav-menu">
+    <div class="nav-menu-grid">
+    <nav
+    id="w-node-_3f5bd8a3-c0c8-4372-07aa-9cebb53656ac-b53656a5"
+    class="nav-menu-item-wrapper">
+    </nav>
+    <nav
+    id="w-node-_3f5bd8a3-c0c8-4372-07aa-9cebb53656b3-b53656a5"
+    class="nav-menu-item-wrapper">
+    <a
+    href="#section2"
+    class="button nav-button w-button">About</a>
+    
+    <a
+    href="#section1"
+    class="button nav-button w-button">Portifolio</a>
+    
+    <a
+        href="https://www.instagram.com/tanabe_dayanne/"
+        target="_blank"
+        class="button nav-button w-button"
+        rel="noreferrer noopener">instagram</a>
+    
+        <a
+        href="https://wa.me/8025464594"
+        class="button nav-button w-button">Contact</a>
+    
+    </nav>
+    </div>
+    </nav>
+    <div class="nav-mobile-wrapper">
+    
+    <div
+    data-w-id="3f5bd8a3-c0c8-4372-07aa-9cebb53656ba"
+    class="menu-button w-nav-button"
+    style="-webkit-user-select: text;"
+    aria-label="menu"
+    role="button"
+    tabindex="0"
+    aria-controls="w-nav-overlay-0"
+    aria-haspopup="menu"
+    aria-expanded="false">
+    <div class="button mobile-button">
+    <div class="mobile-button-text">Menu</div>
+    <div class="mobile-button-text">Close</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="nav-background"></div>
+    <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+    </div>
+        </div>
+        <div class="nav-background"></div>
+        <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+    </div>
+    <main>
+        <div class="select-menu">
+            <ul class="options">
+                <li class="option">
+                    <i class="bx"></i>
+                    <a href="indexPT.html" class="option-text">Portugues</a>
+                </li>
+                <li class="option">
+                    <i class="bx"></i>
+                    <a href="indexJP.html" class="option-text">日本語</a>
+                </li>
+                <li class="option">
+                    <i class="bx"></i>
+                    <a href="index.html" class="option-text">English</a>
+                </li>
+            </ul>
+            <div class="select-btn">
+                <span class="sBtn-text">English</span>
+                <i class="bx bx-chevron-down"></i>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <header class="header wf-section">
+            <div class="container w-container">
+                <div style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                    class="header-card">
+                    <div class="header-card-title">
+                        <div class="header-wrapper">
+                            <div class="header-h1-wrapper">
+                                <h1 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); filter: blur(0px); transform-style: preserve-3d;"
+                                    class="header-h1 _1">Dayanne&nbsp;</h1>
+                            </div>
+                            <div class="header-h1-wrapper">
+                                <h1 class="header-h1 _2"
+                                    style="filter: blur(0px); transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                    Tanabe&nbsp;</h1>
+                            </div>
+                            <div class="header-h1-wrapper">
+                                <h1 style="filter: blur(0px); transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                                    class="header-h1 _3">Ceremonialist&nbsp;</h1>
+                            </div>
+                            <div class="header-h1-wrapper">
+                                <h1 style="filter: blur(0px); transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                                    class="header-h1 _4">&amp;&nbsp;</h1>
+                            </div>
+                            <div class="header-h1-wrapper">
+                                <h1 style="transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); filter: blur(0px); transform-style: preserve-3d;"
+                                    class="header-h1 _5">Planner</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div 
+                        data-autoplay="true" data-loop="true" data-wf-ignore="true"
+                        style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"
+                         class="header-background-teaser w-background-video w-background-video-atom"><video
+                             loop=""
+                            muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                            <source
+                                src="herocasamento.mp4"
+                                data-wf-ignore="true">
+
+                        </video></div>
+                    <div class="header-card-overlay"></div>
+                </div>
+            </div>
+            
+        </header>
+        <section class="section about-section wf-section" id="section2">
+            <div class="container w-container" id="sobre" style="height: 50%;">
+                <div class="section-title">
+                    <div class="intro-wrapper">
+                        <h3>From yes to I do&nbsp;</h3>
+                        <h3>Lets plan the perfect wedding&nbsp;</h3>
+                        <h3>for you&nbsp;</h3>
+                        <div data-w-id="c1d0f4b1-4d02-9eb0-78fc-2b2ddc7d8c55" class="intro-dot-wrapper">
+                            <h3 class="intro-dot _1">.</h3>
+                            <h3 class="intro-dot _2">.</h3>
+                            <h3 class="intro-dot _3">.&nbsp;</h3>
+                        </div>
+                        <div class="intro-image-wrapper"><img
+                                src="img/fundo texto.png"
+                                loading="lazy" alt="" class="intro-image _3"></div>
+                    </div>
+                    <div> Dayanne Tanabe, the perfect choice to make your wedding an 
+                            unforgettable experience. With years of expertise in planning dream weddings, our dedicated team will work tirelessly to ensure that every detail 
+                            is perfect. With a personalized approach and partnerships with the best vendors, we will take care of every aspect of your wedding, creating a
+                             unique and magical day. Contact us today and start your journey to the wedding of your dreams.</div>
+                    </div>
+            </div>
+        </section>
+        <section class="section photo wf-section">
+            <div class="photo-cms-list-wrapper w-dyn-list">
+                <div role="list" class="photo-cms-list w-dyn-items" id="section1">
+                    <div data-w-id="56a4f30e-0c12-0ad2-3c23-384137fe5c9e" role="listitem"
+                        class="photo-cms-item w-dyn-item"
+                        style="will-change: transform; transform: translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        <article class="photo-cms-sticky">
+                            <div class="photo-cms-wrapper photo left"
+                                style="will-change: transform; transform: translate3d(100%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <img src="img/homem1.jpg"
+                                    loading="lazy" alt=""
+                                    class="photo-cms-image">
+                            </div>
+                            <div class="photo-cms-wrapper">
+                                <div class="cms-meta-banner">
+                                    <div id="w-node-_21c5109d-e6cf-806a-37ab-512008b6ee3b-f6160641" class="label"><strong>March
+                                        <br>2022 <br><br></strong></div>
+                                </div>
+                                <div class="photo-cms-meta-title">
+                                    <h2>Gabriel <br>&<br>Larissa</h2>
+                                    <a href="section1.html"class="button w-button">Galery</a>
+                                </div>
+                                <div class="photo-cms-meta-palette">
+                                    <div class="photo-cms-palette-code w-embed">
+                                        <div class="photo-card-palette-code-visit-greenland"></div>
+
+                                        <style>
+                                            .photo-card-palette-code-visit-greenland {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: absolute;
+                                                z-index: 1;
+                                                inset: 0%;
+                                                transition-property: all;
+                                                transition-duration: 200ms;
+                                                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                                                background: linear-gradient(to right, #000000, #283049, #DFDED9, #EBE8E8);
+                                            }
+                                        </style>
+                                    </div>
+                                    <div style="background-color:#000000" class="photo-cms-palette-color _1">
+                                        <div class="photo-card-palette-hex w-embed">
+                                        </div>
+                                    </div>
+                                    <div style="background-color:#283049" class="photo-cms-palette-color _2">
+                                        <div class="photo-card-palette-hex w-embed">
+                                        </div>
+                                    </div>
+                                    <div style="background-color:#DFDED9" class="photo-cms-palette-color _3">
+                                        <div class="photo-card-palette-hex w-embed">
+                                        </div>
+                                    </div>
+                                    <div style="background-color:#EBE8E8" class="photo-cms-palette-color _4">
+                                        <div class="photo-card-palette-hex w-embed">                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="photo-cms-wrapper photo right"
+                                style="will-change: transform; transform: translate3d(-100%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <img src="img/mulher1.jpg"
+                                    loading="lazy" alt=""
+                                    class="photo-cms-image">
+                            </div>
+                        </article>
+                    </div>
+                    <div data-w-id="56a4f30e-0c12-0ad2-3c23-384137fe5c9e" role="listitem"
+                        class="photo-cms-item w-dyn-item"
+                        style="will-change: transform; transform: translate3d(0px, 10%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                        <article class="photo-cms-sticky">
+                            <div class="photo-cms-wrapper photo left"
+                                style="will-change: transform; transform: translate3d(100%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <img src="img/homem2.jpg"
+                                    loading="lazy" alt=""
+                                    class="photo-cms-image">
+                            </div>
+                            <div class="photo-cms-wrapper">
+                                <div class="cms-meta-banner">
+                                    <div id="w-node-_21c5109d-e6cf-806a-37ab-512008b6ee3b-f6160641" class="label">
+                                        <strong>September <br>2022 <br><br></strong></div>
+                                </div>
+                                <div class="photo-cms-meta-title">
+                                    <h2>Felipe <br>&<br> Bianca</h2>
+                                    <a href="section2.html"class="button w-button">Galery</a>
+                                </div>
+                                <div class="photo-cms-meta-palette">
+                                    <div class="photo-cms-palette-code w-embed">
+                                        <div class="photo-card-palette-code-follow-the-tracks"></div>
+
+                                        <style>
+                                            .photo-card-palette-code-follow-the-tracks {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: absolute;
+                                                z-index: 1;
+                                                inset: 0%;
+                                                transition-property: all;
+                                                transition-duration: 200ms;
+                                                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                                                background: linear-gradient(to right, #422209, #6F5532, #958973, #EBE8E8);
+                                            }
+                                        </style>
+                                    </div>
+                                    <div style="background-color:#422209" class="photo-cms-palette-color _1">
+                                        <div class="photo-card-palette-hex w-embed">                                        </div>
+                                    </div>
+                                    <div style="background-color:#6F5532" class="photo-cms-palette-color _2">
+                                        <div class="photo-card-palette-hex w-embed">                                        </div>
+                                    </div>
+                                    <div style="background-color:#958973" class="photo-cms-palette-color _3">
+                                        <div class="photo-card-palette-hex w-embed">                                        </div>
+                                    </div>
+                                    <div style="background-color:#EBE8E8" class="photo-cms-palette-color _4">
+                                        <div class="photo-card-palette-hex w-embed">                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="photo-cms-wrapper photo right"
+                                style="will-change: transform; transform: translate3d(-100%, 0%, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <img src="img/mulher2.jpg"
+                                    loading="lazy" alt=""
+                                    class="photo-cms-image">
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section motion-section wf-section">
+            <div class="motion-cms-list-wrapper w-dyn-list">
+                <div role="list" class="motion-cms-list w-dyn-items">
+                    <div role="listitem" class="motion-cms-item w-dyn-item">
+                        <h2 class="motion-cms-title">Make Memories...</h2>
+                        <br>
+                        <div class="motion-cms-images"
+                            style="will-change: transform; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(20deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                            <a aria-label="See case study" id="w-node-_5a63b183-3d0a-d315-e32e-3b509238c6e1-f6160641"
+                                href="video.html" class="motion-cms-image-wrapper main w-inline-block"><img
+                                    src="img/img3.jpg"
+                                    loading="lazy" alt=""                                    class="motion-cms-image"
+                                    style="will-change: transform; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                <div class="motion-cms-play"> </div>
+                                <div class="motion-cms-play"><div class="motion-cms-play-icon w-embed"><svg width="100%" viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 9.76795C20.3333 10.5378 20.3333 12.4623 19 13.2321L3.25 22.3253C1.91667 23.0951 0.250001 22.1329 0.250001 20.5933L0.250002 2.40673C0.250002 0.867131 1.91667 -0.0951185 3.25 0.674682L19 9.76795Z" fill="black"></path>
+                                    </svg></div><div class="motion-cms-play-icon glow w-embed"><svg width="100%"  viewBox="0 0 20 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 9.76795C20.3333 10.5378 20.3333 12.4623 19 13.2321L3.25 22.3253C1.91667 23.0951 0.250001 22.1329 0.250001 20.5933L0.250002 2.40673C0.250002 0.867131 1.91667 -0.0951185 3.25 0.674682L19 9.76795Z" fill="black"></path>
+                                    </svg></div></div>
+                            </a> 
+                            <div class="motion-parallax-wrapper a">
+                                <div id="w-node-_5a63b183-3d0a-d315-e32e-3b509238c6e7-f6160641"
+                                    class="motion-cms-image-wrapper parallax"><img
+                                        src="img/img5.jpg"
+                                        loading="lazy" alt="" class="motion-cms-image parallax">
+                                </div>
+                            </div>
+                            <div class="motion-parallax-wrapper b">
+                                <div id="w-node-_5a63b183-3d0a-d315-e32e-3b509238c6ea-f6160641"
+                                    class="motion-cms-image-wrapper parallax"><img
+                                        src="img/img1.jpg"
+                                        loading="lazy" alt="" class="motion-cms-image parallax">
+                                </div>
+                            </div>
+                            <div class="motion-parallax-wrapper c">
+                                <div id="w-node-_5a63b183-3d0a-d315-e32e-3b509238c6ed-f6160641"
+                                    class="motion-cms-image-wrapper parallax"><img
+                                        src="img/img2.jpg"
+                                        loading="lazy" alt="" class="motion-cms-image parallax"
+                                        style="will-change: transform; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer wf-section">
+        <div class="container footer-container w-container">
+            <div class="section-title">
+                <div class="section-title-labels footer-title">
+                    <div class="label email">get in touch</div>
+                    <div class="label email">click to copy</div>
+                    <div class="label email">copied ✨</div>
+                </div>
+                <div class="footer-email-wrapper">
+                    <h4 fs-copyclip-element="click" data-w-id="3828a183-21ec-a577-75cf-9593a39afd44"
+                        class="footer-email-h4"><span id="footer-email">@tanabe_dayanne</span></h4>
+                    <div class="bg _25"></div>
+                    <div class="footer-email-border"></div>
+                </div>
+            </div>
+            <div class="w-layout-grid smallprints-grid">
+                <div id="w-node-_233bae08-454a-fc4c-62f3-5983b5478e6a-8709f171" class="footer-smallprints">
+                    <div class="label smallprint">Dayanne Tanabe <br> 2023 <br>  </div>                                                                </div>
+                <div id="w-node-_7ea94df0-5362-ce22-1209-86158709f178-8709f171" class="w-layout-grid footer-socials">                       
+                        <a rel="noreferrer noopener"
+                        href="https://www.instagram.com/tanabe_dayanne/" target="_blank"
+                        class="button w-button">Instagram</a>
+                    </div>
+                <div id="w-node-d564be68-0968-d7f3-e215-8175a63c9c81-8709f171" class="footer-smallprints">
+                    <div class="label smallprint">design &amp; dev&nbsp;✦&nbsp;</div>
+                    <div class="footer-credit label smallprint"><a href="https://www.instagram.com/felipe_bperes/">Felipe Peres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=60db5e59f76ae577e9f50d42"
+        type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+    <script src="https://uploads-ssl.webflow.com/60db5e59f76ae577e9f50d42/js/webflow.26e4c9ee6.js"
+        type="text/javascript"></script><!-- Lenis smooth scroll, it's pure butter -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+</body>
+</html>

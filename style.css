@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+.select-menu{
+    width: 100px;
+    margin: 0px ;
+    position: fixed ;
+    z-index: 1;
+    bottom: 2%;
+    right: 2%;
+
+}
+.select-menu .select-btn{
+    display: flex;
+    height: 30px;
+    background: #fff;
+    padding: 0px;
+    padding-left: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.select-btn i{
+    font-size: 25px;
+    transition: 0.3s;
+    z-index: 1;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg);
+}
+.select-menu .options{
+    position: relative;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    z-index: 1;
+    display: none;
+}
+.select-menu.active .options{
+    display: block;
+    z-index: 1;
+}
+.options .option{
+    display: flex;
+    height: 55px;
+    cursor: pointer;
+    padding: 0 13px;
+    border-radius: 8px;
+    align-items: center;
+    z-index: 1;
+    background: #fff;
+}
+.dropbtn {
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: sticky;
+    right:10px ;
+    bottom:10px;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .option{
+      font-size: 13px;
+      padding: 0 10 ;
+      margin: 0px;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .project {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .project-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .project-image {
+    width: 50%;
+    object-fit: cover; /* Isso vai ajustar a imagem para cobrir o espaço sem distorção */
+    border-radius: 8px; /* opcional, para dar bordas arredondadas na imagem */
+  }
+  
+  .project-description {
+    width: 45%;
+  }
+  
+  .project-description h2 {
+    font-size: 24px;
+    color: #BA8B6F;
+  }
+  
+  .project-description p {
+    font-size: 16px;
+    color: #BA8B6F;
+  }
+  @media (max-width: 768px) {
+  .project-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-image {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  .project-description {
+    width: 90%;
+  }
+}
